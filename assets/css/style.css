@@ -1225,7 +1225,6 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 .download-btn {
   position: relative;
-  width: 100%;
   color: var(--orange-yellow-crayola);
   display: flex;
   justify-content: center;
