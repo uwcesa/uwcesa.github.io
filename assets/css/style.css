@@ -744,12 +744,12 @@ main {
 }
 
 .clients-item {
-  min-width: 30%;
+  min-width: 50%;
   scroll-snap-align: start;
 }
 
 .clients-item img {
-  width: 10%;
+  width: 100%;
   filter: grayscale(1);
   transition: var(--transition-1);
 }
