@@ -1902,6 +1902,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   max-width: 300px;
   margin: auto;
   text-align: center;
+  overflow:auto;
 }
 
 .title {
