@@ -12,6 +12,9 @@
   },
   "dependencies": {
     "@astrojs/react": "latest",
+    "@fontsource-variable/fraunces": "latest",
+    "@fontsource-variable/outfit": "latest",
+    "@fontsource/dm-mono": "latest",
     "@radix-ui/react-slot": "latest",
     "@tailwindcss/vite": "latest",
     "astro": "latest",
@@ -20,12 +23,16 @@
     "lucide-react": "latest",
     "react": "latest",
     "react-dom": "latest",
+    "react-icons": "latest",
     "shadcn": "latest",
     "tailwind-merge": "latest",
     "tailwindcss": "latest",
     "tw-animate-css": "latest"
   },
   "devDependencies": {
+    "@types/node": "^26.4.1",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
     "typescript": "latest"
   }
 }

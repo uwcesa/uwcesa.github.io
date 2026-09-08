@@ -1,19 +1,5 @@
 ---
-import { readFileSync } from "node:fs";
-
-import "../styles/global.css";
-
-const legacyHtml = readFileSync("index.html", "utf-8");
-const headContent = legacyHtml.match(/<head>([\s\S]*?)<\/head>/i)?.[1] ?? "";
-const bodyContent = legacyHtml.match(/<body>([\s\S]*?)<\/body>/i)?.[1] ?? "";
+import SitePage from "../layouts/SitePage.astro";
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <Fragment set:html={headContent} />
-  </head>
-  <body>
-    <Fragment set:html={bodyContent} />
-  </body>
-</html>
+<SitePage page="home" />

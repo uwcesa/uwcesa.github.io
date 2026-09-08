@@ -1,0 +1,37 @@
+---
+import { getCollection } from "astro:content";
+import CesaSite from "../components/CesaSite";
+import "../styles/global.css";
+import "../styles/prototype.css";
+
+interface Props {
+  page: "home" | "about" | "membership" | "projects" | "publications" | "announcements" | "contact";
+  title?: string;
+  description?: string;
+}
+
+const { page, title = "CESA | University of Washington", description = "Computing for Environmental and Social Advocacy at the University of Washington." } = Astro.props;
+const announcements = (await getCollection("announcements", ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .map(({ id, data }) => ({
+    id,
+    title: data.title,
+    date: data.date.toISOString(),
+    displayDate: data.date.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" }),
+    category: data.category,
+    summary: data.summary,
+    image: data.image,
+  }));
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/png" href="/assets/images/cesa-logo.png" />
+    <title>{title}</title>
+  </head>
+  <body><CesaSite announcements={announcements} page={page} client:load /></body>
+</html>
